@@ -6,15 +6,13 @@
     </div>
 </header>
 <div>
+    {% for post in post_list %}
     <div>
-        {% for post in post_list %}
-        <div>
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.author }} on {{ post.creation_date}} </p>
-            <p>{{post.content|slice:":200"}}</p>
-            <a href="{% url 'post_detail' post.slug  %}">Read More &rarr;</a>
-        </div>
-        {% endfor %}
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.author }} on {{ post.creation_date}} </p>
+        <p>{{post.content|slice:":200"}}</p>
+        <a href="{% url 'post_detail' post.slug  %}">Read More &rarr;</a>
     </div>
+    {% endfor %}
 </div>
 {%endblock%}
