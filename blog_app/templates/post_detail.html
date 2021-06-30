@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div>
+    <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+    <p>{{ post.author }} on {{ post.creation_date }}</p>
+    <p>{{ object.content | safe }}</p>
+</div>
+
+{% endblock content %}
